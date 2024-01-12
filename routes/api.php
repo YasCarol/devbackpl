@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\cadastroController;
 use App\Http\Controllers\testesController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,4 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('teste', [testesController::class, 'teste']);
+
+// endpoint cadastro
+Route::prefix('cadastro')->group(function () {
+    Route::post('cadastrar', [UserController::class, 'create']);
+});
+
+// endpoint teste
+Route::post('index', [UserController::class, 'index']);
