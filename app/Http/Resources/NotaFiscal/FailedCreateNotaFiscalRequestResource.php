@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\NotaFiscal;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class FailedCreateUserRequestResource extends JsonResource
+class FailedCreateNotaFiscalRequestResource extends JsonResource
 {
     /**
      * Transform the resource into an array.

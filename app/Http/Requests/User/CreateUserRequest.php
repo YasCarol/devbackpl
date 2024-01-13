@@ -54,16 +54,16 @@ class CreateUserRequest extends FormRequest
     {
         // Realize transformações nos dados após a validação ter ocorrido a validacao
         $this->merge([
-            'name' => ucwords($this->name),
             'email' => strtolower($this->email),
-            'cpf' => !empty($this->cpf) ? $this->cpf :  ""
         ]);
     }
     protected function passedValidation()
     {
         // Realize transformações nos dados após a validação ter ocorrido a validacao
         $this->merge([
-            'password' => bcrypt($this->password)
+            'password' => bcrypt($this->password),
+            'name' => ucwords($this->name),
+            'cpf' => !empty($this->cpf) ? $this->cpf :  ""
         ]);
     }
 }

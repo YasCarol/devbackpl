@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests\NotaFiscal;
 
-use App\Http\Resources\User\FailedCreateUserRequestResource;
+use App\Http\Resources\NotaFiscal\FailedCreateNotaFiscalRequestResource;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -66,6 +66,6 @@ class CreateNotaFiscalRequest extends FormRequest
     protected function failedValidation(Validator $validator)
     {
         // Retornar uma resposta JSON de erro
-        throw new HttpResponseException(response()->json(new FailedCreateUserRequestResource($validator->errors()), 422));
+        throw new HttpResponseException(response()->json(new FailedCreateNotaFiscalRequestResource($validator->errors()), 422));
     }
 }
