@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DTOs\NotaFiscal\CreateNotaFiscalDTO;
 use App\Http\Requests\NotaFiscal\CreateNotaFiscalRequest;
+use App\Http\Requests\NotaFiscal\UpdateNotaFiscalRequest;
 use App\Http\Resources\NotaFiscal\CreateNotaFiscalRequestResource;
 use App\Services\NotaFiscalService;
 use Illuminate\Http\Request;
@@ -41,9 +42,9 @@ class NotaFiscalController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateNotaFiscalRequest $request)
     {
-        //
+        
     }
 
     /**

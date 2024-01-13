@@ -30,4 +30,5 @@ Route::prefix('/user')->group(function () {
 // endpoint CRUD notas fiscais
 Route::prefix('/nota')->group(function () {
     Route::post('criar', [NotaFiscalController::class, 'create'])->middleware('auth.basic');
+    Route::put('atualizar', [NotaFiscalController::class, 'update'])->middleware('auth.basic');
 });

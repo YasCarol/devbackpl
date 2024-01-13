@@ -50,13 +50,6 @@ class CreateUserRequest extends FormRequest
         // Retornar uma resposta JSON de erro
         throw new HttpResponseException(response()->json(new FailedCreateUserRequestResource($validator->errors()), 422));
     }
-    protected function prepareForValidation()
-    {
-        // Realize transformações nos dados após a validação ter ocorrido a validacao
-        $this->merge([
-            'email' => strtolower($this->email),
-        ]);
-    }
     protected function passedValidation()
     {
         // Realize transformações nos dados após a validação ter ocorrido a validacao
