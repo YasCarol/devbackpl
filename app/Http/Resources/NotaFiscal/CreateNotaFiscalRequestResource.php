@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\NotaFiscal;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class CreateUserRequestResource extends JsonResource
+class CreateNotaFiscalRequestResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,11 +17,9 @@ class CreateUserRequestResource extends JsonResource
     {
         return [
             'status' => true,
-            'message' => 'Usuario cadastrado com sucesso!',
+            'message' => 'Nota Fiscal criada com sucesso!',
             'data' => [
-                "Nome usuario" => $this->resource['name'],
-                "Email" => $this->resource['email'],
-                "Cpf" => $this->resource['cpf'],
+                'id' => $this->resource['criador'],
                 "Data criação" => Carbon::make($this->resource['created_at'])->format("d-m-Y H:i:s")
             ],
         ];

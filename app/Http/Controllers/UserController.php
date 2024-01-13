@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\DTOs\User\CreateUserDTO;
 use App\Http\Requests\User\CreateUserRequest;
 use Illuminate\Http\Request;
-use App\Http\Resources\User\UserResource;
+use App\Http\Resources\User\CreateUserRequestResource;
 use App\Services\UserService;
 
 class UserController extends Controller
@@ -30,7 +30,7 @@ class UserController extends Controller
     public function create(CreateUserRequest $request) // cadastro do usuario
     {
         $user = $this->userService->newUser(CreateUserDTO::makeFromRequest($request));
-        return new UserResource($user);
+        return new CreateUserRequestResource($user);
     }
 
     /**
